@@ -45,6 +45,7 @@
     <string name="wear_toast_nap_created">Nap +%1$dm set for %2$s</string>
 
     <string name="symbol_colon">:</string>
+    <string name="wear_now_prefix">Now:</string>
     <string name="wear_bezel_hour">Bezel: Hour</string>
     <string name="wear_bezel_min">Bezel: Min</string>
 
