@@ -44,23 +44,18 @@
     <string name="nap_alarm_label_fmt">Siesta %1$dm</string>
     <string name="wear_toast_nap_created">Siesta +%1$dm para las %2$s</string>
 
-    <string name="symbol_minus">-</string>
-    <string name="symbol_plus">+</string>
     <string name="symbol_colon">:</string>
     <string name="placeholder_two_zeros">00</string>
+    <string name="wear_label_hours">Hora</string>
+    <string name="wear_label_minutes">Minutos</string>
+    <string name="step_h_minus">-1h</string>
+    <string name="step_h_plus">+1h</string>
     <string name="step_m5">-5</string>
     <string name="step_m1">-1</string>
     <string name="step_p1">+1</string>
     <string name="step_p5">+5</string>
 
     <string name="wear_repeat_days_optional">Días (opcional)</string>
-    <string name="day_letter_mon">L</string>
-    <string name="day_letter_tue">M</string>
-    <string name="day_letter_wed">X</string>
-    <string name="day_letter_thu">J</string>
-    <string name="day_letter_fri">V</string>
-    <string name="day_letter_sat">S</string>
-    <string name="day_letter_sun">D</string>
 
     <string name="days_one_time">Una vez</string>
     <string name="days_every_day">Todos los días</string>
@@ -74,8 +69,8 @@
     <string name="day_short_sat">Sáb</string>
     <string name="day_short_sun">Dom</string>
 
-    <string name="wear_label_preview_fmt">Etiqueta: %1$s</string>
-    <string name="preset_label_alarm">Alarma</string>
+    <string name="wear_label_preview_fmt">Etiqueta: %1$s (+ #ID)</string>
+    <string name="preset_label_sleep">Sleep</string>
     <string name="preset_label_work">Trabajo</string>
     <string name="preset_label_wake">Despertar</string>
     <string name="wear_btn_custom_label">Otra…</string>

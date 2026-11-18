@@ -24,6 +24,7 @@ public class PrefsManager {
     private static final String PREF_NAME = "sleep_remote_prefs";
     private static final String KEY_NAP_PRESETS = "nap_presets_json";
     private static final String KEY_ALARM_ALIASES = "alarm_aliases_json";
+    private static final String KEY_ALARM_SEQ_ID = "alarm_seq_id";
     private static final String KEY_SNOOZE_MINUTES = "default_snooze_minutes";
     private static final String KEY_LAST_SYNC_MS = "last_sync_ms";
     private static final String KEY_TRACKING_ACTIVE = "tracking_active";
@@ -107,6 +108,12 @@ public class PrefsManager {
 
     public void setTrackingActive(boolean active) {
         prefs.edit().putBoolean(KEY_TRACKING_ACTIVE, active).apply();
+    }
+
+    public synchronized int nextAlarmTagId() {
+        int next = prefs.getInt(KEY_ALARM_SEQ_ID, 0) + 1;
+        prefs.edit().putInt(KEY_ALARM_SEQ_ID, next).apply();
+        return next;
     }
 
     public Map<Long, String> getAlarmAliases() {

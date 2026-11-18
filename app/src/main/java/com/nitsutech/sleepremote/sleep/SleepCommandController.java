@@ -40,9 +40,10 @@ public class SleepCommandController {
 
         int safeHour = ((hour % 24) + 24) % 24;
         int safeMinute = ((minutes % 60) + 60) % 60;
-        String effectiveLabel = TextUtils.isEmpty(label)
+        String baseLabel = TextUtils.isEmpty(label)
                 ? context.getString(R.string.default_alarm_label)
                 : label.trim();
+        String effectiveLabel = ensureUniqueLabel(context, baseLabel);
 
         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
         intent.setComponent(new ComponentName(SleepConstants.SLEEP_PACKAGE, SleepConstants.COMPONENT_ADD_ALARM));
@@ -142,5 +143,13 @@ public class SleepCommandController {
 
         context.sendBroadcast(intent);
         return new CommandResult(true, action);
+    }
+
+    private static String ensureUniqueLabel(Context context, String baseLabel) {
+        if (baseLabel.matches(".*#\\d+$")) {
+            return baseLabel;
+        }
+        int seqId = new PrefsManager(context).nextAlarmTagId();
+        return baseLabel + " #" + seqId;
     }
 }

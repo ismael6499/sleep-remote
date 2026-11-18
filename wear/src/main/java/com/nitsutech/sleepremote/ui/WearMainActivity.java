@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.InputDeviceCompat;
 import androidx.wear.widget.SwipeDismissFrameLayout;
@@ -143,7 +144,7 @@ public class WearMainActivity extends AppCompatActivity {
         now.add(Calendar.HOUR_OF_DAY, 1);
         createHour = now.get(Calendar.HOUR_OF_DAY);
         createMinute = (now.get(Calendar.MINUTE) / 5) * 5;
-        createLabel = getString(R.string.preset_label_alarm);
+        createLabel = getString(R.string.preset_label_sleep);
     }
 
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
@@ -326,7 +327,7 @@ public class WearMainActivity extends AppCompatActivity {
         btnDaySun.setOnClickListener(v -> toggleDayBit(WearProtocol.BIT_SUN));
 
         // Label Presets & Custom Input
-        findViewById(R.id.btn_lbl_alarm).setOnClickListener(v -> setCreateLabel(getString(R.string.preset_label_alarm)));
+        findViewById(R.id.btn_lbl_sleep).setOnClickListener(v -> setCreateLabel(getString(R.string.preset_label_sleep)));
         findViewById(R.id.btn_lbl_work).setOnClickListener(v -> setCreateLabel(getString(R.string.preset_label_work)));
         findViewById(R.id.btn_lbl_wake).setOnClickListener(v -> setCreateLabel(getString(R.string.preset_label_wake)));
         findViewById(R.id.btn_lbl_custom).setOnClickListener(v -> showLabelInputDialog());
@@ -406,7 +407,7 @@ public class WearMainActivity extends AppCompatActivity {
                 .setView(input)
                 .setPositiveButton(R.string.wear_ok, (d, w) -> {
                     String val = input.getText() != null ? input.getText().toString().trim() : "";
-                    createLabel = TextUtils.isEmpty(val) ? getString(R.string.preset_label_alarm) : val;
+                    createLabel = TextUtils.isEmpty(val) ? getString(R.string.preset_label_sleep) : val;
                     renderCreateScreen();
                 })
                 .setNegativeButton(R.string.wear_cancel, null)
@@ -565,10 +566,14 @@ public class WearMainActivity extends AppCompatActivity {
             TextView tvBadge = new TextView(this);
             tvBadge.setText(alarm.enabled ? R.string.wear_state_on : R.string.wear_state_off);
             tvBadge.setTextColor(ContextCompat.getColor(this,
-                    alarm.enabled ? R.color.wear_teal : R.color.wear_text_muted));
-            tvBadge.setTextSize(12f);
+                    alarm.enabled ? R.color.wear_bg : R.color.wear_text_muted));
+            tvBadge.setBackgroundResource(R.drawable.bg_wear_chip);
+            tvBadge.setBackgroundTintList(ContextCompat.getColorStateList(this,
+                    alarm.enabled ? R.color.wear_teal : R.color.wear_chip_off));
+            tvBadge.setTextSize(11f);
             tvBadge.setTypeface(null, android.graphics.Typeface.BOLD);
-            tvBadge.setPadding(dp(8), dp(4), dp(4), dp(4));
+            tvBadge.setGravity(Gravity.CENTER);
+            tvBadge.setPadding(dp(12), dp(6), dp(12), dp(6));
 
             card.addView(left);
             card.addView(tvBadge);
@@ -595,16 +600,21 @@ public class WearMainActivity extends AppCompatActivity {
             String wakeStr = String.format(Locale.US, "%02d:%02d",
                     target.get(Calendar.HOUR_OF_DAY), target.get(Calendar.MINUTE));
 
-            Button btn = new Button(this);
+            AppCompatButton btn = new AppCompatButton(this);
             btn.setText(getString(R.string.wear_nap_btn_fmt, mins, wakeStr));
             btn.setTextColor(ContextCompat.getColor(this, R.color.wear_text));
+            btn.setBackgroundResource(R.drawable.bg_wear_pill);
             btn.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.wear_primary));
+            btn.setStateListAnimator(null);
             btn.setAllCaps(false);
+            btn.setTextSize(13f);
+            btn.setTypeface(null, android.graphics.Typeface.BOLD);
+            btn.setMaxLines(1);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
+                    dp(46)
             );
-            lp.bottomMargin = dp(6);
+            lp.bottomMargin = dp(8);
             btn.setLayoutParams(lp);
             btn.setOnClickListener(v -> {
                 WatchHapticHelper.pulseConfirm(this);

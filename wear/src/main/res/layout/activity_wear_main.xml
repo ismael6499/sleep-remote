@@ -12,10 +12,10 @@
         android:clipToPadding="false"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:paddingStart="16dp"
-        android:paddingTop="28dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="44dp">
+        android:paddingStart="20dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="48dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                     android:background="@drawable/bg_wear_card"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="12dp">
 
                     <TextView
                         android:id="@+id/tv_wear_next_alarm"
@@ -68,53 +68,90 @@
                         android:textSize="11sp" />
                 </LinearLayout>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_wear_open_alarms"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_primary"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_alarms"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_wear_open_naps"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_teal"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_naps"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_bg"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_wear_open_create"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_card_active"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_create_alarm"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_wear_open_controls"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_card_active"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_sleep_controls"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_wear_sync_now"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_chip_off"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_sync_now"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_text_muted"
@@ -141,32 +178,46 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="horizontal">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_back_alarms"
                         android:layout_width="0dp"
                         android:layout_height="38dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_pill"
                         android:backgroundTint="@color/wear_chip_off"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
                         android:text="@string/wear_btn_back"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_wear_refresh_alarms"
                         android:layout_width="0dp"
                         android:layout_height="38dp"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_pill"
                         android:backgroundTint="@color/wear_card_active"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
                         android:text="@string/wear_btn_refresh"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_teal"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -193,17 +244,22 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_back_naps"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_chip_off"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_back"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_text"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:id="@+id/ll_wear_naps_list"
@@ -229,18 +285,23 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_back_create"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_chip_off"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_back"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_text"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-                <!-- Hour & Minute Selector -->
+                <!-- Big Time Preview Card -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -248,110 +309,190 @@
                     android:background="@drawable/bg_wear_card"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <Button
-                        android:id="@+id/btn_hour_minus"
-                        android:layout_width="44dp"
-                        android:layout_height="40dp"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:text="@string/symbol_minus"
-                        android:textColor="@color/wear_text" />
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
 
                     <TextView
                         android:id="@+id/tv_create_hour"
-                        android:layout_width="42dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:includeFontPadding="false"
                         android:text="@string/placeholder_two_zeros"
                         android:textColor="@color/wear_text"
-                        android:textSize="22sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/btn_hour_plus"
-                        android:layout_width="44dp"
-                        android:layout_height="40dp"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:text="@string/symbol_plus"
-                        android:textColor="@color/wear_text" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="4dp"
-                        android:paddingEnd="4dp"
+                        android:includeFontPadding="false"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
                         android:text="@string/symbol_colon"
                         android:textColor="@color/wear_teal"
-                        android:textSize="20sp"
+                        android:textSize="28sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_create_min"
-                        android:layout_width="42dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:includeFontPadding="false"
                         android:text="@string/placeholder_two_zeros"
                         android:textColor="@color/wear_text"
-                        android:textSize="22sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btn_min_minus5"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:text="@string/step_m5"
-                        android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
-
-                    <Button
-                        android:id="@+id/btn_min_minus1"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:text="@string/step_m1"
-                        android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
-
-                    <Button
-                        android:id="@+id/btn_min_plus1"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:text="@string/step_p1"
-                        android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
-
-                    <Button
-                        android:id="@+id/btn_min_plus5"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:text="@string/step_p5"
-                        android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
-                </LinearLayout>
-
-                <!-- Optional Repeat Days -->
+                <!-- Hour Steppers -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:text="@string/wear_label_hours"
+                    android:textColor="@color/wear_text_muted"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_hour_minus"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:backgroundTint="@color/wear_card_active"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/step_h_minus"
+                        android:textAllCaps="false"
+                        android:textColor="@color/wear_text"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_hour_plus"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:backgroundTint="@color/wear_card_active"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/step_h_plus"
+                        android:textAllCaps="false"
+                        android:textColor="@color/wear_text"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Minute Steppers -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/wear_label_minutes"
+                    android:textColor="@color/wear_text_muted"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_min_minus5"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:backgroundTint="@color/wear_chip_off"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/step_m5"
+                        android:textAllCaps="false"
+                        android:textColor="@color/wear_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_min_minus1"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:backgroundTint="@color/wear_chip_off"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/step_m1"
+                        android:textAllCaps="false"
+                        android:textColor="@color/wear_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_min_plus1"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:backgroundTint="@color/wear_chip_off"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/step_p1"
+                        android:textAllCaps="false"
+                        android:textColor="@color/wear_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_min_plus5"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:backgroundTint="@color/wear_chip_off"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/step_p5"
+                        android:textAllCaps="false"
+                        android:textColor="@color/wear_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Optional Repeat Days (2 clean rows) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="@string/wear_repeat_days_optional"
                     android:textColor="@color/wear_text_muted"
                     android:textSize="11sp" />
@@ -362,172 +503,267 @@
                     android:layout_marginTop="4dp"
                     android:orientation="horizontal">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_day_mon"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
                         android:padding="0dp"
-                        android:text="@string/day_letter_mon"
+                        android:stateListAnimator="@null"
+                        android:text="@string/day_short_mon"
+                        android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_day_tue"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="4dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
                         android:padding="0dp"
-                        android:text="@string/day_letter_tue"
+                        android:stateListAnimator="@null"
+                        android:text="@string/day_short_tue"
+                        android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_day_wed"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="4dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
                         android:padding="0dp"
-                        android:text="@string/day_letter_wed"
+                        android:stateListAnimator="@null"
+                        android:text="@string/day_short_wed"
+                        android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_day_thu"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="4dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
                         android:padding="0dp"
-                        android:text="@string/day_letter_thu"
+                        android:stateListAnimator="@null"
+                        android:text="@string/day_short_thu"
+                        android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                    <Button
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_day_fri"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="2dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
                         android:padding="0dp"
-                        android:text="@string/day_letter_fri"
+                        android:stateListAnimator="@null"
+                        android:text="@string/day_short_fri"
+                        android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_day_sat"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="4dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
                         android:padding="0dp"
-                        android:text="@string/day_letter_sat"
+                        android:stateListAnimator="@null"
+                        android:text="@string/day_short_sat"
+                        android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_day_sun"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="2dp"
+                        android:layout_marginStart="4dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
                         android:padding="0dp"
-                        android:text="@string/day_letter_sun"
+                        android:stateListAnimator="@null"
+                        android:text="@string/day_short_sun"
+                        android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/tv_create_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/preset_label_alarm"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/preset_label_sleep"
                     android:textColor="@color/wear_teal"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="6dp"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btn_lbl_alarm"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_lbl_sleep"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
                         android:backgroundTint="@color/wear_chip_off"
-                        android:text="@string/preset_label_alarm"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/preset_label_sleep"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="10sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_lbl_work"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="4dp"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
                         android:backgroundTint="@color/wear_chip_off"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
                         android:text="@string/preset_label_work"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="10sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="6dp"
                     android:orientation="horizontal">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_lbl_wake"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
                         android:backgroundTint="@color/wear_chip_off"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
                         android:text="@string/preset_label_wake"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="10sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_lbl_custom"
                         android:layout_width="0dp"
                         android:layout_height="36dp"
-                        android:layout_marginStart="4dp"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_wear_chip"
                         android:backgroundTint="@color/wear_card_active"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:stateListAnimator="@null"
                         android:text="@string/wear_btn_custom_label"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_teal"
-                        android:textSize="10sp" />
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_create_vibrate"
                     android:layout_width="match_parent"
-                    android:layout_height="38dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_card_active"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_vibrate_on"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_text"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_create_save"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_green"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_save_alarm"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_text"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -548,77 +784,117 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_back_controls"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_chip_off"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_btn_back"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_text"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_ctrl_start_track"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="46dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_green"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_ctrl_start_track"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_ctrl_start_ideal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_primary"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_ctrl_start_ideal"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_ctrl_stop_track"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_red"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_ctrl_stop_track"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_ctrl_snooze"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_amber"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_ctrl_snooze"
                     android:textAllCaps="false"
                     android:textColor="@color/wear_bg"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_ctrl_skip_next"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_card_active"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_ctrl_skip_next"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_ctrl_dismiss"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_wear_pill"
                     android:backgroundTint="@color/wear_chip_off"
+                    android:maxLines="1"
+                    android:minHeight="0dp"
+                    android:stateListAnimator="@null"
                     android:text="@string/wear_ctrl_dismiss"
                     android:textAllCaps="false"
-                    android:textColor="@color/wear_text" />
+                    android:textColor="@color/wear_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
