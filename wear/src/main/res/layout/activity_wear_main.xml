@@ -301,7 +301,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <!-- Big Time Preview Card -->
+                <!-- Hour & Minute Wheels Card -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -309,18 +309,16 @@
                     android:background="@drawable/bg_wear_card"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:paddingStart="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="6dp">
 
-                    <TextView
-                        android:id="@+id/tv_create_hour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:text="@string/placeholder_two_zeros"
-                        android:textColor="@color/wear_text"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
+                    <NumberPicker
+                        android:id="@+id/np_create_hour"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -330,92 +328,27 @@
                         android:paddingEnd="6dp"
                         android:text="@string/symbol_colon"
                         android:textColor="@color/wear_teal"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_create_min"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:text="@string/placeholder_two_zeros"
-                        android:textColor="@color/wear_text"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
+                    <NumberPicker
+                        android:id="@+id/np_create_min"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1" />
                 </LinearLayout>
 
-                <!-- Hour Steppers -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/wear_label_hours"
-                    android:textColor="@color/wear_text_muted"
-                    android:textSize="11sp" />
-
+                <!-- Optional Bezel Lock Chips -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="6dp"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_hour_minus"
+                        android:id="@+id/btn_bezel_hour"
                         android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_wear_chip"
-                        android:backgroundTint="@color/wear_card_active"
-                        android:maxLines="1"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:padding="0dp"
-                        android:stateListAnimator="@null"
-                        android:text="@string/step_h_minus"
-                        android:textAllCaps="false"
-                        android:textColor="@color/wear_text"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_hour_plus"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_wear_chip"
-                        android:backgroundTint="@color/wear_card_active"
-                        android:maxLines="1"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:padding="0dp"
-                        android:stateListAnimator="@null"
-                        android:text="@string/step_h_plus"
-                        android:textAllCaps="false"
-                        android:textColor="@color/wear_text"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- Minute Steppers -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/wear_label_minutes"
-                    android:textColor="@color/wear_text_muted"
-                    android:textSize="11sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_min_minus5"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
+                        android:layout_height="34dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_wear_chip"
                         android:backgroundTint="@color/wear_chip_off"
@@ -424,17 +357,17 @@
                         android:minHeight="0dp"
                         android:padding="0dp"
                         android:stateListAnimator="@null"
-                        android:text="@string/step_m5"
+                        android:text="@string/wear_bezel_hour"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="12sp"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_min_minus1"
+                        android:id="@+id/btn_bezel_min"
                         android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_marginStart="5dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_wear_chip"
                         android:backgroundTint="@color/wear_chip_off"
@@ -443,48 +376,10 @@
                         android:minHeight="0dp"
                         android:padding="0dp"
                         android:stateListAnimator="@null"
-                        android:text="@string/step_m1"
+                        android:text="@string/wear_bezel_min"
                         android:textAllCaps="false"
                         android:textColor="@color/wear_text"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_min_plus1"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_wear_chip"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:maxLines="1"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:padding="0dp"
-                        android:stateListAnimator="@null"
-                        android:text="@string/step_p1"
-                        android:textAllCaps="false"
-                        android:textColor="@color/wear_text"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_min_plus5"
-                        android:layout_width="0dp"
-                        android:layout_height="38dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_wear_chip"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:maxLines="1"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:padding="0dp"
-                        android:stateListAnimator="@null"
-                        android:text="@string/step_p5"
-                        android:textAllCaps="false"
-                        android:textColor="@color/wear_text"
-                        android:textSize="12sp"
+                        android:textSize="11sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 

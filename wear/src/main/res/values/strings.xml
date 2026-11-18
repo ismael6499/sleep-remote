@@ -45,15 +45,8 @@
     <string name="wear_toast_nap_created">Nap +%1$dm set for %2$s</string>
 
     <string name="symbol_colon">:</string>
-    <string name="placeholder_two_zeros">00</string>
-    <string name="wear_label_hours">Hour</string>
-    <string name="wear_label_minutes">Minutes</string>
-    <string name="step_h_minus">-1h</string>
-    <string name="step_h_plus">+1h</string>
-    <string name="step_m5">-5</string>
-    <string name="step_m1">-1</string>
-    <string name="step_p1">+1</string>
-    <string name="step_p5">+5</string>
+    <string name="wear_bezel_hour">Bezel: Hour</string>
+    <string name="wear_bezel_min">Bezel: Min</string>
 
     <string name="wear_repeat_days_optional">Repeat days (optional)</string>
 

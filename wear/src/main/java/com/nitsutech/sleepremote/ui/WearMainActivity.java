@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +59,10 @@ public class WearMainActivity extends AppCompatActivity {
     private static final int SCREEN_CREATE = 3;
     private static final int SCREEN_CONTROLS = 4;
 
+    private static final int BEZEL_SCROLL = 0;
+    private static final int BEZEL_HOUR = 1;
+    private static final int BEZEL_MIN = 2;
+
     private static final Gson GSON = new Gson();
 
     private WatchPrefsManager prefs;
@@ -76,8 +82,10 @@ public class WearMainActivity extends AppCompatActivity {
     private LinearLayout llAlarmsList;
     private LinearLayout llNapsList;
 
-    private TextView tvCreateHour;
-    private TextView tvCreateMin;
+    private NumberPicker npCreateHour;
+    private NumberPicker npCreateMin;
+    private Button btnBezelHour;
+    private Button btnBezelMin;
     private TextView tvCreateLabel;
     private Button btnDayMon;
     private Button btnDayTue;
@@ -92,6 +100,7 @@ public class WearMainActivity extends AppCompatActivity {
     private GestureDetector backSwipeDetector;
     private final Deque<Integer> backStack = new ArrayDeque<>();
     private int currentScreen = SCREEN_HOME;
+    private int bezelMode = BEZEL_SCROLL;
 
     private int createHour = 8;
     private int createMinute = 0;
@@ -190,7 +199,17 @@ public class WearMainActivity extends AppCompatActivity {
     public boolean onGenericMotionEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_SCROLL
                 && event.isFromSource(InputDeviceCompat.SOURCE_ROTARY_ENCODER)) {
-            float delta = -event.getAxisValue(MotionEvent.AXIS_SCROLL) * 140f;
+            float axis = event.getAxisValue(MotionEvent.AXIS_SCROLL);
+            if (currentScreen == SCREEN_CREATE && bezelMode != BEZEL_SCROLL) {
+                int step = axis < 0 ? 1 : -1;
+                if (bezelMode == BEZEL_HOUR) {
+                    adjustHour(step);
+                } else {
+                    adjustMinute(step);
+                }
+                return true;
+            }
+            float delta = -axis * 140f;
             if (mainScroll != null) {
                 mainScroll.smoothScrollBy(0, Math.round(delta));
                 return true;
@@ -214,8 +233,10 @@ public class WearMainActivity extends AppCompatActivity {
         llAlarmsList = findViewById(R.id.ll_wear_alarms_list);
         llNapsList = findViewById(R.id.ll_wear_naps_list);
 
-        tvCreateHour = findViewById(R.id.tv_create_hour);
-        tvCreateMin = findViewById(R.id.tv_create_min);
+        npCreateHour = findViewById(R.id.np_create_hour);
+        npCreateMin = findViewById(R.id.np_create_min);
+        btnBezelHour = findViewById(R.id.btn_bezel_hour);
+        btnBezelMin = findViewById(R.id.btn_bezel_min);
         tvCreateLabel = findViewById(R.id.tv_create_label);
         btnDayMon = findViewById(R.id.btn_day_mon);
         btnDayTue = findViewById(R.id.btn_day_tue);
@@ -263,6 +284,7 @@ public class WearMainActivity extends AppCompatActivity {
     }
 
     private boolean navigateBack() {
+        bezelMode = BEZEL_SCROLL;
         if (!backStack.isEmpty()) {
             currentScreen = backStack.pop();
             renderCurrentScreen();
@@ -279,6 +301,7 @@ public class WearMainActivity extends AppCompatActivity {
     }
 
     private void navigateTo(int targetScreen) {
+        bezelMode = BEZEL_SCROLL;
         if (currentScreen != targetScreen) {
             backStack.push(currentScreen);
         }
@@ -309,13 +332,25 @@ public class WearMainActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.wear_toast_syncing, Toast.LENGTH_SHORT).show();
         });
 
-        // Create Alarm Time Pickers
-        findViewById(R.id.btn_hour_minus).setOnClickListener(v -> adjustHour(-1));
-        findViewById(R.id.btn_hour_plus).setOnClickListener(v -> adjustHour(1));
-        findViewById(R.id.btn_min_minus5).setOnClickListener(v -> adjustMinute(-5));
-        findViewById(R.id.btn_min_minus1).setOnClickListener(v -> adjustMinute(-1));
-        findViewById(R.id.btn_min_plus1).setOnClickListener(v -> adjustMinute(1));
-        findViewById(R.id.btn_min_plus5).setOnClickListener(v -> adjustMinute(5));
+        // Create Alarm Wheel Pickers & Bezel Lock
+        configureWheel(npCreateHour, 0, 23, val -> {
+            createHour = val;
+            WatchHapticHelper.pulseTap(this);
+        });
+        configureWheel(npCreateMin, 0, 59, val -> {
+            createMinute = val;
+            WatchHapticHelper.pulseTap(this);
+        });
+        btnBezelHour.setOnClickListener(v -> {
+            WatchHapticHelper.pulseTap(this);
+            bezelMode = bezelMode == BEZEL_HOUR ? BEZEL_SCROLL : BEZEL_HOUR;
+            renderCreateScreen();
+        });
+        btnBezelMin.setOnClickListener(v -> {
+            WatchHapticHelper.pulseTap(this);
+            bezelMode = bezelMode == BEZEL_MIN ? BEZEL_SCROLL : BEZEL_MIN;
+            renderCreateScreen();
+        });
 
         // Optional Day Toggles
         btnDayMon.setOnClickListener(v -> toggleDayBit(WearProtocol.BIT_MON));
@@ -627,9 +662,42 @@ public class WearMainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
+    private void configureWheel(NumberPicker picker, int min, int max, java.util.function.IntConsumer onChange) {
+        picker.setMinValue(min);
+        picker.setMaxValue(max);
+        picker.setWrapSelectorWheel(true);
+        picker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        picker.setFormatter(val -> String.format(Locale.US, "%02d", val));
+        picker.setTextColor(ContextCompat.getColor(this, R.color.wear_text));
+        picker.setTextSize(TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP, 24f, getResources().getDisplayMetrics()));
+        picker.setSelectionDividerHeight(dp(1));
+        picker.setOnValueChangedListener((p, oldVal, newVal) -> onChange.accept(newVal));
+        picker.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            return false;
+        });
+    }
+
     private void renderCreateScreen() {
-        tvCreateHour.setText(String.format(Locale.US, "%02d", createHour));
-        tvCreateMin.setText(String.format(Locale.US, "%02d", createMinute));
+        if (npCreateHour.getValue() != createHour) {
+            npCreateHour.setValue(createHour);
+        }
+        if (npCreateMin.getValue() != createMinute) {
+            npCreateMin.setValue(createMinute);
+        }
+        btnBezelHour.setBackgroundTintList(ContextCompat.getColorStateList(this,
+                bezelMode == BEZEL_HOUR ? R.color.wear_teal : R.color.wear_chip_off));
+        btnBezelHour.setTextColor(ContextCompat.getColor(this,
+                bezelMode == BEZEL_HOUR ? R.color.wear_bg : R.color.wear_text));
+        btnBezelMin.setBackgroundTintList(ContextCompat.getColorStateList(this,
+                bezelMode == BEZEL_MIN ? R.color.wear_teal : R.color.wear_chip_off));
+        btnBezelMin.setTextColor(ContextCompat.getColor(this,
+                bezelMode == BEZEL_MIN ? R.color.wear_bg : R.color.wear_text));
+
         tvCreateLabel.setText(getString(R.string.wear_label_preview_fmt, createLabel));
 
         styleDayBtn(btnDayMon, (createDaysMask & WearProtocol.BIT_MON) != 0);
