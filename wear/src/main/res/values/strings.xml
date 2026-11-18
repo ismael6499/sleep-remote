@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SleepRemote</string>
+    <string name="tile_label">SleepRemote Controls</string>
+    <string name="tile_open_app">Open App</string>
+    <string name="tile_nap_fmt">+%1$dm Nap</string>
+    <string name="tile_start_sleep">Start Sleep</string>
+    <string name="tile_stop_sleep">Stop Sleep</string>
+    <string name="tile_skip_next">Skip Next</string>
+    <string name="tile_tracking_active">Tracking Active</string>
+
+    <string name="wear_no_active_alarms">No active alarms</string>
+    <string name="wear_next_alarm_fmt">Next: %1$s · %2$s</string>
+    <string name="wear_status_waiting_sync">Waiting for phone sync…</string>
+    <string name="wear_status_synced">Synced with %1$s</string>
+    <string name="wear_status_tracking_on">Sleep tracking active</string>
+    <string name="wear_status_perm_needed">Grant READ permission on phone</string>
+    <string name="wear_status_sleep_missing">Sleep as Android not found</string>
+
+    <string name="wear_btn_alarms">Alarms</string>
+    <string name="wear_btn_alarms_count">Alarms (%1$d/%2$d)</string>
+    <string name="wear_btn_naps">Quick Naps</string>
+    <string name="wear_btn_create_alarm">New Alarm</string>
+    <string name="wear_btn_sleep_controls">Sleep Controls</string>
+    <string name="wear_btn_sync_now">Sync Now</string>
+    <string name="wear_btn_back">Back</string>
+    <string name="wear_btn_refresh">Refresh</string>
+
+    <string name="wear_title_alarms">Sleep Alarms</string>
+    <string name="wear_title_naps">Quick Naps</string>
+    <string name="wear_title_create">New Alarm</string>
+    <string name="wear_title_controls">Sleep Controls</string>
+
+    <string name="wear_alarms_empty">No alarms synced yet.</string>
+    <string name="wear_alarms_need_perm">Open SleepRemote on phone to grant Sleep Read permission.</string>
+    <string name="alarm_default_id_fmt">Alarm #%1$d</string>
+    <string name="wear_smart_period_fmt">%1$dm Smart</string>
+    <string name="wear_state_on">ON</string>
+    <string name="wear_state_off">OFF</string>
+    <string name="wear_vibrate_on">Vibration: ON</string>
+    <string name="wear_vibrate_off">Vibration: OFF</string>
+
+    <string name="wear_nap_btn_fmt">+%1$d min → %2$s</string>
+    <string name="nap_alarm_label_fmt">Nap %1$dm</string>
+    <string name="wear_toast_nap_created">Nap +%1$dm set for %2$s</string>
+
+    <string name="symbol_minus">-</string>
+    <string name="symbol_plus">+</string>
+    <string name="symbol_colon">:</string>
+    <string name="placeholder_two_zeros">00</string>
+    <string name="step_m5">-5</string>
+    <string name="step_m1">-1</string>
+    <string name="step_p1">+1</string>
+    <string name="step_p5">+5</string>
+
+    <string name="wear_repeat_days_optional">Repeat days (optional)</string>
+    <string name="day_letter_mon">M</string>
+    <string name="day_letter_tue">T</string>
+    <string name="day_letter_wed">W</string>
+    <string name="day_letter_thu">T</string>
+    <string name="day_letter_fri">F</string>
+    <string name="day_letter_sat">S</string>
+    <string name="day_letter_sun">S</string>
+
+    <string name="days_one_time">One-time</string>
+    <string name="days_every_day">Every day</string>
+    <string name="days_weekdays">Mon–Fri</string>
+    <string name="days_weekends">Sat–Sun</string>
+    <string name="day_short_mon">Mon</string>
+    <string name="day_short_tue">Tue</string>
+    <string name="day_short_wed">Wed</string>
+    <string name="day_short_thu">Thu</string>
+    <string name="day_short_fri">Fri</string>
+    <string name="day_short_sat">Sat</string>
+    <string name="day_short_sun">Sun</string>
+
+    <string name="wear_label_preview_fmt">Label: %1$s</string>
+    <string name="preset_label_alarm">Alarm</string>
+    <string name="preset_label_work">Work</string>
+    <string name="preset_label_wake">Wake</string>
+    <string name="wear_btn_custom_label">Custom…</string>
+    <string name="wear_dialog_label_title">Alarm Label</string>
+    <string name="wear_hint_alarm_label">Enter label</string>
+    <string name="wear_ok">OK</string>
+    <string name="wear_cancel">Cancel</string>
+    <string name="wear_btn_save_alarm">Create Alarm</string>
+    <string name="wear_toast_alarm_created">Alarm set for %1$s</string>
+
+    <string name="wear_ctrl_start_track">Start Tracking</string>
+    <string name="wear_ctrl_start_ideal">Start + Ideal Alarm</string>
+    <string name="wear_ctrl_stop_track">Stop Tracking</string>
+    <string name="wear_ctrl_snooze">Snooze</string>
+    <string name="wear_ctrl_snooze_fmt">Snooze (%1$dm)</string>
+    <string name="wear_ctrl_skip_next">Skip Next Alarm</string>
+    <string name="wear_ctrl_dismiss">Dismiss Alarm</string>
+
+    <string name="wear_toast_syncing">Syncing with phone…</string>
+    <string name="wear_toast_track_started">Sleep tracking started</string>
+    <string name="wear_toast_track_ideal">Tracking + Ideal Alarm started</string>
+    <string name="wear_toast_track_stopped">Sleep tracking stopped</string>
+    <string name="wear_toast_snoozed">Snooze sent</string>
+    <string name="wear_toast_skipped">Next alarm skipped</string>
+    <string name="wear_toast_dismissed">Dismiss sent</string>
+</resources>

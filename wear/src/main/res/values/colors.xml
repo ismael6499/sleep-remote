@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="wear_bg">#070A12</color>
+    <color name="wear_card">#131B2E</color>
+    <color name="wear_card_active">#1E2B4D</color>
+    <color name="wear_primary">#6C7BFF</color>
+    <color name="wear_teal">#26C6DA</color>
+    <color name="wear_green">#43A047</color>
+    <color name="wear_amber">#FB8C00</color>
+    <color name="wear_red">#E53935</color>
+    <color name="wear_text">#F4F7FF</color>
+    <color name="wear_text_muted">#9AA7C7</color>
+    <color name="wear_chip_off">#232D47</color>
+</resources>

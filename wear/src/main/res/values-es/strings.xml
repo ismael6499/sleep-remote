@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SleepRemote</string>
+    <string name="tile_label">Controles SleepRemote</string>
+    <string name="tile_open_app">Abrir App</string>
+    <string name="tile_nap_fmt">+%1$dm Siesta</string>
+    <string name="tile_start_sleep">Iniciar Sueño</string>
+    <string name="tile_stop_sleep">Frenar Sueño</string>
+    <string name="tile_skip_next">Saltear Próx.</string>
+    <string name="tile_tracking_active">Tracking Activo</string>
+
+    <string name="wear_no_active_alarms">Sin alarmas activas</string>
+    <string name="wear_next_alarm_fmt">Próx: %1$s · %2$s</string>
+    <string name="wear_status_waiting_sync">Esperando sincronización…</string>
+    <string name="wear_status_synced">Sincronizado con %1$s</string>
+    <string name="wear_status_tracking_on">Tracking de sueño activo</string>
+    <string name="wear_status_perm_needed">Otorgá permiso READ en el celular</string>
+    <string name="wear_status_sleep_missing">Sleep as Android no encontrado</string>
+
+    <string name="wear_btn_alarms">Alarmas</string>
+    <string name="wear_btn_alarms_count">Alarmas (%1$d/%2$d)</string>
+    <string name="wear_btn_naps">Siestas Rápidas</string>
+    <string name="wear_btn_create_alarm">Nueva Alarma</string>
+    <string name="wear_btn_sleep_controls">Controles de Sueño</string>
+    <string name="wear_btn_sync_now">Sincronizar</string>
+    <string name="wear_btn_back">Volver</string>
+    <string name="wear_btn_refresh">Actualizar</string>
+
+    <string name="wear_title_alarms">Alarmas Sleep</string>
+    <string name="wear_title_naps">Siestas Rápidas</string>
+    <string name="wear_title_create">Nueva Alarma</string>
+    <string name="wear_title_controls">Controles de Sueño</string>
+
+    <string name="wear_alarms_empty">No hay alarmas sincronizadas aún.</string>
+    <string name="wear_alarms_need_perm">Abrí SleepRemote en el celular para otorgar permiso de lectura.</string>
+    <string name="alarm_default_id_fmt">Alarma #%1$d</string>
+    <string name="wear_smart_period_fmt">%1$dm Inteligente</string>
+    <string name="wear_state_on">ON</string>
+    <string name="wear_state_off">OFF</string>
+    <string name="wear_vibrate_on">Vibración: ON</string>
+    <string name="wear_vibrate_off">Vibración: OFF</string>
+
+    <string name="wear_nap_btn_fmt">+%1$d min → %2$s</string>
+    <string name="nap_alarm_label_fmt">Siesta %1$dm</string>
+    <string name="wear_toast_nap_created">Siesta +%1$dm para las %2$s</string>
+
+    <string name="symbol_minus">-</string>
+    <string name="symbol_plus">+</string>
+    <string name="symbol_colon">:</string>
+    <string name="placeholder_two_zeros">00</string>
+    <string name="step_m5">-5</string>
+    <string name="step_m1">-1</string>
+    <string name="step_p1">+1</string>
+    <string name="step_p5">+5</string>
+
+    <string name="wear_repeat_days_optional">Días (opcional)</string>
+    <string name="day_letter_mon">L</string>
+    <string name="day_letter_tue">M</string>
+    <string name="day_letter_wed">X</string>
+    <string name="day_letter_thu">J</string>
+    <string name="day_letter_fri">V</string>
+    <string name="day_letter_sat">S</string>
+    <string name="day_letter_sun">D</string>
+
+    <string name="days_one_time">Una vez</string>
+    <string name="days_every_day">Todos los días</string>
+    <string name="days_weekdays">Lun–Vie</string>
+    <string name="days_weekends">Sáb–Dom</string>
+    <string name="day_short_mon">Lun</string>
+    <string name="day_short_tue">Mar</string>
+    <string name="day_short_wed">Mié</string>
+    <string name="day_short_thu">Jue</string>
+    <string name="day_short_fri">Vie</string>
+    <string name="day_short_sat">Sáb</string>
+    <string name="day_short_sun">Dom</string>
+
+    <string name="wear_label_preview_fmt">Etiqueta: %1$s</string>
+    <string name="preset_label_alarm">Alarma</string>
+    <string name="preset_label_work">Trabajo</string>
+    <string name="preset_label_wake">Despertar</string>
+    <string name="wear_btn_custom_label">Otra…</string>
+    <string name="wear_dialog_label_title">Etiqueta de alarma</string>
+    <string name="wear_hint_alarm_label">Ingresar etiqueta</string>
+    <string name="wear_ok">Aceptar</string>
+    <string name="wear_cancel">Cancelar</string>
+    <string name="wear_btn_save_alarm">Crear Alarma</string>
+    <string name="wear_toast_alarm_created">Alarma creada para las %1$s</string>
+
+    <string name="wear_ctrl_start_track">Iniciar Tracking</string>
+    <string name="wear_ctrl_start_ideal">Iniciar + Alarma Ideal</string>
+    <string name="wear_ctrl_stop_track">Frenar Tracking</string>
+    <string name="wear_ctrl_snooze">Posponer</string>
+    <string name="wear_ctrl_snooze_fmt">Posponer (%1$dm)</string>
+    <string name="wear_ctrl_skip_next">Saltear Próxima Alarma</string>
+    <string name="wear_ctrl_dismiss">Descartar Alarma</string>
+
+    <string name="wear_toast_syncing">Sincronizando con el celular…</string>
+    <string name="wear_toast_track_started">Tracking iniciado</string>
+    <string name="wear_toast_track_ideal">Tracking + Alarma Ideal iniciado</string>
+    <string name="wear_toast_track_stopped">Tracking detenido</string>
+    <string name="wear_toast_snoozed">Posponer enviado</string>
+    <string name="wear_toast_skipped">Próxima alarma salteada</string>
+    <string name="wear_toast_dismissed">Descartar enviado</string>
+</resources>

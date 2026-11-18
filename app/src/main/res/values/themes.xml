@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SleepRemote" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/sr_primary</item>
+        <item name="colorPrimaryVariant">@color/sr_primary_dark</item>
+        <item name="colorSecondary">@color/sr_teal</item>
+        <item name="android:windowBackground">@color/sr_bg</item>
+        <item name="android:statusBarColor">@color/sr_bg</item>
+        <item name="android:navigationBarColor">@color/sr_bg</item>
+        <item name="android:textColorPrimary">@color/sr_text</item>
+        <item name="android:textColorSecondary">@color/sr_text_muted</item>
+    </style>
+</resources>

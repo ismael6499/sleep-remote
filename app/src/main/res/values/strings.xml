@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SleepRemote</string>
+    <string name="phone_subtitle">Phone companion for Galaxy Watch 8 Classic &amp; Sleep as Android</string>
+
+    <string name="section_status_permissions">Status &amp; Permissions</string>
+    <string name="label_sleep_app">Sleep as Android</string>
+    <string name="status_checking">Checking…</string>
+    <string name="status_sleep_installed">Installed (v%1$s)</string>
+    <string name="status_sleep_missing">Not installed</string>
+
+    <string name="label_read_permission">Read Alarms Permission (com.urbandroid.sleep.READ)</string>
+    <string name="status_perm_granted">Granted</string>
+    <string name="status_perm_missing">Missing — tap below to grant</string>
+    <string name="btn_grant_read">Grant Read Alarms Permission</string>
+
+    <string name="label_overlay_permission">Background Alarm Launch (SYSTEM_ALERT_WINDOW)</string>
+    <string name="status_perm_overlay_missing">Not granted — required to create alarms silently from Watch</string>
+    <string name="btn_grant_overlay">Allow Background Alarm Launch</string>
+
+    <string name="label_watch_connection">Watch Connection</string>
+    <string name="status_watch_connected">Connected: %1$s · Last sync %2$s</string>
+    <string name="status_watch_waiting">Waiting for Watch · Last sync %1$s</string>
+    <string name="sync_never">never</string>
+    <string name="btn_sync_now">Sync to Watch Now</string>
+    <string name="toast_sync_triggered">Syncing state to Watch…</string>
+
+    <string name="section_intent_api_guide">Sleep as Android Intent API Guide</string>
+    <string name="intent_api_guide_body">1. Open Sleep as Android.\n2. Go to Settings → Services → Automation.\n3. Enable Intent API so Watch commands (tracking, snooze, skip, dismiss, toggle) work remotely.</string>
+    <string name="btn_open_sleep_app">Open Sleep as Android</string>
+
+    <string name="section_nap_presets">Quick Nap Presets</string>
+    <string name="nap_presets_hint">Tap a chip to trigger a quick nap alarm, or tap X to remove. Changes sync automatically to your Watch.</string>
+    <string name="nap_preset_chip_fmt">+%1$dm</string>
+    <string name="hint_new_nap_minutes">Minutes (e.g. 25)</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_reset">Reset</string>
+    <string name="toast_invalid_preset">Enter minutes between 1 and 720</string>
+
+    <string name="label_default_snooze">Default Snooze Duration (from Watch)</string>
+    <string name="snooze_5m">5 min</string>
+    <string name="snooze_10m">10 min</string>
+    <string name="snooze_15m">15 min</string>
+
+    <string name="section_quick_actions">Quick Sleep Actions</string>
+    <string name="btn_start_tracking">Start Tracking</string>
+    <string name="btn_start_ideal">Ideal Alarm</string>
+    <string name="btn_stop_tracking">Stop Tracking</string>
+    <string name="btn_skip_next">Skip Next</string>
+
+    <string name="section_sleep_alarms">Sleep as Android Alarms</string>
+    <string name="alarms_empty">No alarms found in Sleep as Android.</string>
+    <string name="alarms_need_permission">Grant Sleep Read permission above to load your alarms.</string>
+    <string name="alarm_no_label">No label</string>
+    <string name="alarm_default_id_fmt">Alarm #%1$d</string>
+    <string name="alarm_smart_period_fmt">%1$dm Smart</string>
+    <string name="dialog_alarm_alias_title">Alarm Display Name</string>
+    <string name="dialog_alarm_alias_note">Set a display alias in SleepRemote (synced to Watch). Note: Sleep blocks direct renaming or deleting from external apps, so use Open Sleep to delete or change Smart Period.</string>
+    <string name="hint_alarm_alias">Alias (leave empty for default)</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="placeholder_time">00:00</string>
+    <string name="default_alarm_label">SleepRemote</string>
+    <string name="nap_alarm_label_fmt">Nap %1$dm</string>
+
+    <string name="days_one_time">One-time</string>
+    <string name="days_every_day">Every day</string>
+    <string name="days_weekdays">Mon–Fri</string>
+    <string name="days_weekends">Sat–Sun</string>
+    <string name="day_short_mon">Mon</string>
+    <string name="day_short_tue">Tue</string>
+    <string name="day_short_wed">Wed</string>
+    <string name="day_short_thu">Thu</string>
+    <string name="day_short_fri">Fri</string>
+    <string name="day_short_sat">Sat</string>
+    <string name="day_short_sun">Sun</string>
+
+    <string name="err_sleep_not_installed">Sleep as Android is not installed on this phone.</string>
+    <string name="err_label_required_for_toggle">Sleep requires a non-empty label to toggle an alarm remotely.</string>
+</resources>

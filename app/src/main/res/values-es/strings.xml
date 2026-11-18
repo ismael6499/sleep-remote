@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SleepRemote</string>
+    <string name="phone_subtitle">Compañero en el celular para Galaxy Watch 8 Classic y Sleep as Android</string>
+
+    <string name="section_status_permissions">Estado y Permisos</string>
+    <string name="label_sleep_app">Sleep as Android</string>
+    <string name="status_checking">Verificando…</string>
+    <string name="status_sleep_installed">Instalado (v%1$s)</string>
+    <string name="status_sleep_missing">No instalado</string>
+
+    <string name="label_read_permission">Permiso de lectura de alarmas (com.urbandroid.sleep.READ)</string>
+    <string name="status_perm_granted">Concedido</string>
+    <string name="status_perm_missing">Falta — tocá abajo para otorgar</string>
+    <string name="btn_grant_read">Otorgar permiso de lectura</string>
+
+    <string name="label_overlay_permission">Crear alarmas en segundo plano (SYSTEM_ALERT_WINDOW)</string>
+    <string name="status_perm_overlay_missing">No concedido — necesario para crear alarmas silenciosas desde el reloj</string>
+    <string name="btn_grant_overlay">Permitir inicio en segundo plano</string>
+
+    <string name="label_watch_connection">Conexión con el Reloj</string>
+    <string name="status_watch_connected">Conectado: %1$s · Última sinc. %2$s</string>
+    <string name="status_watch_waiting">Esperando al reloj · Última sinc. %1$s</string>
+    <string name="sync_never">nunca</string>
+    <string name="btn_sync_now">Sincronizar con el reloj</string>
+    <string name="toast_sync_triggered">Sincronizando estado con el reloj…</string>
+
+    <string name="section_intent_api_guide">Guía de Intent API en Sleep as Android</string>
+    <string name="intent_api_guide_body">1. Abrí Sleep as Android.\n2. Andá a Ajustes → Servicios → Automatización.\n3. Activá Intent API para que funcionen los comandos desde el reloj (tracking, posponer, saltear, descartar, alternar).</string>
+    <string name="btn_open_sleep_app">Abrir Sleep as Android</string>
+
+    <string name="section_nap_presets">Presets de Siesta Rápida</string>
+    <string name="nap_presets_hint">Tocá un chip para crear una siesta rápida, o la X para quitarlo. Los cambios se sincronizan con tu reloj.</string>
+    <string name="nap_preset_chip_fmt">+%1$dm</string>
+    <string name="hint_new_nap_minutes">Minutos (ej. 25)</string>
+    <string name="btn_add">Agregar</string>
+    <string name="btn_reset">Restablecer</string>
+    <string name="toast_invalid_preset">Ingresá minutos entre 1 y 720</string>
+
+    <string name="label_default_snooze">Duración de Posponer por defecto (desde el reloj)</string>
+    <string name="snooze_5m">5 min</string>
+    <string name="snooze_10m">10 min</string>
+    <string name="snooze_15m">15 min</string>
+
+    <string name="section_quick_actions">Controles Rápidos de Sueño</string>
+    <string name="btn_start_tracking">Iniciar Tracking</string>
+    <string name="btn_start_ideal">Alarma Ideal</string>
+    <string name="btn_stop_tracking">Frenar Tracking</string>
+    <string name="btn_skip_next">Saltear Próxima</string>
+
+    <string name="section_sleep_alarms">Alarmas de Sleep as Android</string>
+    <string name="alarms_empty">No se encontraron alarmas en Sleep as Android.</string>
+    <string name="alarms_need_permission">Otorgá el permiso de lectura arriba para cargar tus alarmas.</string>
+    <string name="alarm_no_label">Sin etiqueta</string>
+    <string name="alarm_default_id_fmt">Alarma #%1$d</string>
+    <string name="alarm_smart_period_fmt">%1$dm Inteligente</string>
+    <string name="dialog_alarm_alias_title">Nombre en SleepRemote</string>
+    <string name="dialog_alarm_alias_note">Definí un alias visible en SleepRemote (sincronizado con el reloj). Nota: Sleep bloquea renombrar o borrar directo desde apps externas, así que usá Abrir Sleep para eliminar o cambiar el período inteligente.</string>
+    <string name="hint_alarm_alias">Alias (vacío para usar el ID)</string>
+    <string name="btn_save">Guardar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="placeholder_time">00:00</string>
+    <string name="default_alarm_label">SleepRemote</string>
+    <string name="nap_alarm_label_fmt">Siesta %1$dm</string>
+
+    <string name="days_one_time">Una vez</string>
+    <string name="days_every_day">Todos los días</string>
+    <string name="days_weekdays">Lun–Vie</string>
+    <string name="days_weekends">Sáb–Dom</string>
+    <string name="day_short_mon">Lun</string>
+    <string name="day_short_tue">Mar</string>
+    <string name="day_short_wed">Mié</string>
+    <string name="day_short_thu">Jue</string>
+    <string name="day_short_fri">Vie</string>
+    <string name="day_short_sat">Sáb</string>
+    <string name="day_short_sun">Dom</string>
+
+    <string name="err_sleep_not_installed">Sleep as Android no está instalado en este celular.</string>
+    <string name="err_label_required_for_toggle">Sleep requiere una etiqueta no vacía para prender o apagar una alarma remotamente.</string>
+</resources>
