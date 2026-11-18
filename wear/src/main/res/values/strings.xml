@@ -48,9 +48,6 @@
     <string name="wear_now_prefix">Now:</string>
     <string name="wear_label_hour">Hour (slide ← →)</string>
     <string name="wear_label_minutes">Minutes (slide ← →)</string>
-    <string name="wear_bezel_hour">Bezel: Hour</string>
-    <string name="wear_bezel_min">Bezel: Min</string>
-
     <string name="wear_repeat_days_optional">Repeat days (optional)</string>
 
     <string name="days_one_time">One-time</string>

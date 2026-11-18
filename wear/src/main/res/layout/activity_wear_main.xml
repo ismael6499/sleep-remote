@@ -39,6 +39,32 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/wear_now_prefix"
+                        android:textColor="@color/wear_text_muted"
+                        android:textSize="12sp" />
+
+                    <TextClock
+                        android:id="@+id/tc_home_now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:format12Hour="HH:mm"
+                        android:format24Hour="HH:mm"
+                        android:textColor="@color/wear_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -355,51 +381,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_marginTop="3dp" />
-
-                <!-- Optional Bezel Lock Chips -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_bezel_hour"
-                        android:layout_width="0dp"
-                        android:layout_height="34dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_wear_chip"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:maxLines="1"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:padding="0dp"
-                        android:stateListAnimator="@null"
-                        android:text="@string/wear_bezel_hour"
-                        android:textAllCaps="false"
-                        android:textColor="@color/wear_text"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_bezel_min"
-                        android:layout_width="0dp"
-                        android:layout_height="34dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_wear_chip"
-                        android:backgroundTint="@color/wear_chip_off"
-                        android:maxLines="1"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:padding="0dp"
-                        android:stateListAnimator="@null"
-                        android:text="@string/wear_bezel_min"
-                        android:textAllCaps="false"
-                        android:textColor="@color/wear_text"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
 
                 <!-- Optional Repeat Days (2 clean rows) -->
                 <TextView
