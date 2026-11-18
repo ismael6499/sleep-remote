@@ -259,9 +259,13 @@ public class WearMainActivity extends AppCompatActivity {
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
                 if (e1 == null || e2 == null) return false;
-                if (currentScreen == SCREEN_CREATE
-                        && (isTouchInsideView(hwCreateHour, e1) || isTouchInsideView(hwCreateMin, e1))) {
-                    return false;
+                if (currentScreen == SCREEN_CREATE) {
+                    if (isTouchInsideView(hwCreateHour, e1) || isTouchInsideView(hwCreateMin, e1)) {
+                        return false;
+                    }
+                    if (e1.getRawX() > dp(56)) {
+                        return false;
+                    }
                 }
                 float dx = e2.getX() - e1.getX();
                 float dy = Math.abs(e2.getY() - e1.getY());
