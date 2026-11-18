@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -17,7 +16,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.NumberPicker;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -82,8 +80,8 @@ public class WearMainActivity extends AppCompatActivity {
     private LinearLayout llAlarmsList;
     private LinearLayout llNapsList;
 
-    private NumberPicker npCreateHour;
-    private NumberPicker npCreateMin;
+    private HorizontalWheelView hwCreateHour;
+    private HorizontalWheelView hwCreateMin;
     private Button btnBezelHour;
     private Button btnBezelMin;
     private TextView tvCreateLabel;
@@ -233,8 +231,8 @@ public class WearMainActivity extends AppCompatActivity {
         llAlarmsList = findViewById(R.id.ll_wear_alarms_list);
         llNapsList = findViewById(R.id.ll_wear_naps_list);
 
-        npCreateHour = findViewById(R.id.np_create_hour);
-        npCreateMin = findViewById(R.id.np_create_min);
+        hwCreateHour = findViewById(R.id.hw_create_hour);
+        hwCreateMin = findViewById(R.id.hw_create_min);
         btnBezelHour = findViewById(R.id.btn_bezel_hour);
         btnBezelMin = findViewById(R.id.btn_bezel_min);
         tvCreateLabel = findViewById(R.id.tv_create_label);
@@ -261,6 +259,10 @@ public class WearMainActivity extends AppCompatActivity {
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
                 if (e1 == null || e2 == null) return false;
+                if (currentScreen == SCREEN_CREATE
+                        && (isTouchInsideView(hwCreateHour, e1) || isTouchInsideView(hwCreateMin, e1))) {
+                    return false;
+                }
                 float dx = e2.getX() - e1.getX();
                 float dy = Math.abs(e2.getY() - e1.getY());
                 if (currentScreen != SCREEN_HOME && dx > 75f && dx > dy * 1.4f) {
@@ -332,12 +334,14 @@ public class WearMainActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.wear_toast_syncing, Toast.LENGTH_SHORT).show();
         });
 
-        // Create Alarm Wheel Pickers & Bezel Lock
-        configureWheel(npCreateHour, 0, 23, val -> {
+        // Create Alarm Horizontal Wheel Pickers & Bezel Lock
+        hwCreateHour.setRange(0, 23);
+        hwCreateHour.setOnValueChangedListener(val -> {
             createHour = val;
             WatchHapticHelper.pulseTap(this);
         });
-        configureWheel(npCreateMin, 0, 59, val -> {
+        hwCreateMin.setRange(0, 59);
+        hwCreateMin.setOnValueChangedListener(val -> {
             createMinute = val;
             WatchHapticHelper.pulseTap(this);
         });
@@ -662,32 +666,22 @@ public class WearMainActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    private void configureWheel(NumberPicker picker, int min, int max, java.util.function.IntConsumer onChange) {
-        picker.setMinValue(min);
-        picker.setMaxValue(max);
-        picker.setWrapSelectorWheel(true);
-        picker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-        picker.setFormatter(val -> String.format(Locale.US, "%02d", val));
-        picker.setTextColor(ContextCompat.getColor(this, R.color.wear_text));
-        picker.setTextSize(TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_SP, 24f, getResources().getDisplayMetrics()));
-        picker.setSelectionDividerHeight(dp(1));
-        picker.setOnValueChangedListener((p, oldVal, newVal) -> onChange.accept(newVal));
-        picker.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                v.getParent().requestDisallowInterceptTouchEvent(true);
-            }
-            return false;
-        });
+    private boolean isTouchInsideView(View view, MotionEvent ev) {
+        if (view == null || view.getVisibility() != View.VISIBLE) return false;
+        int[] loc = new int[2];
+        view.getLocationOnScreen(loc);
+        float rx = ev.getRawX();
+        float ry = ev.getRawY();
+        return rx >= loc[0] && rx <= loc[0] + view.getWidth()
+                && ry >= loc[1] && ry <= loc[1] + view.getHeight();
     }
 
     private void renderCreateScreen() {
-        if (npCreateHour.getValue() != createHour) {
-            npCreateHour.setValue(createHour);
+        if (hwCreateHour.getValue() != createHour) {
+            hwCreateHour.setValue(createHour);
         }
-        if (npCreateMin.getValue() != createMinute) {
-            npCreateMin.setValue(createMinute);
+        if (hwCreateMin.getValue() != createMinute) {
+            hwCreateMin.setValue(createMinute);
         }
         btnBezelHour.setBackgroundTintList(ContextCompat.getColorStateList(this,
                 bezelMode == BEZEL_HOUR ? R.color.wear_teal : R.color.wear_chip_off));

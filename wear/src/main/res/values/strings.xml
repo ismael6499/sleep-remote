@@ -46,6 +46,8 @@
 
     <string name="symbol_colon">:</string>
     <string name="wear_now_prefix">Now:</string>
+    <string name="wear_label_hour">Hour (slide ← →)</string>
+    <string name="wear_label_minutes">Minutes (slide ← →)</string>
     <string name="wear_bezel_hour">Bezel: Hour</string>
     <string name="wear_bezel_min">Bezel: Min</string>
 

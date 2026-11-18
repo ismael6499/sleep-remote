@@ -327,42 +327,34 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <!-- Hour & Minute Wheels Card -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <!-- Horizontal Slide Hour & Minute Wheels -->
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_wear_card"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingStart="10dp"
-                    android:paddingTop="6dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="6dp">
+                    android:layout_marginTop="6dp"
+                    android:text="@string/wear_label_hour"
+                    android:textColor="@color/wear_text_muted"
+                    android:textSize="11sp" />
 
-                    <NumberPicker
-                        android:id="@+id/np_create_hour"
-                        android:layout_width="0dp"
-                        android:layout_height="120dp"
-                        android:layout_weight="1" />
+                <com.nitsutech.sleepremote.ui.HorizontalWheelView
+                    android:id="@+id/hw_create_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="3dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:paddingStart="6dp"
-                        android:paddingEnd="6dp"
-                        android:text="@string/symbol_colon"
-                        android:textColor="@color/wear_teal"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/wear_label_minutes"
+                    android:textColor="@color/wear_text_muted"
+                    android:textSize="11sp" />
 
-                    <NumberPicker
-                        android:id="@+id/np_create_min"
-                        android:layout_width="0dp"
-                        android:layout_height="120dp"
-                        android:layout_weight="1" />
-                </LinearLayout>
+                <com.nitsutech.sleepremote.ui.HorizontalWheelView
+                    android:id="@+id/hw_create_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="3dp" />
 
                 <!-- Optional Bezel Lock Chips -->
                 <LinearLayout
