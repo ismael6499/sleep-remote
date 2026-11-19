@@ -7,7 +7,7 @@ Native **Android + Wear OS** remote controller for **Sleep as Android** (`com.ur
 ### Watch (`:wear`)
 - **Live Alarm List**: Reads alarms from Sleep as Android on the phone, sorted chronologically by next trigger time (enabled first, disabled at the bottom).
 - **1-Tap Alarm Toggle**: Enables or disables any alarm remotely via `ALARM_STATE_CHANGE` (supporting both labeled alarms and unlabeled alarms via `alarm_id`, with local display aliases).
-- **Alarm Creator with Wheels & Bezel**: Side-by-side `NumberPicker` hour (`00–23`) and minute (`00–59`) wheels with optional **Bezel Lock** (`Bezel: Hour` / `Bezel: Min`) for physical rotating-bezel control, optional repeat days, preset/custom labels (auto-tagged with unique `#ID`), and vibration toggle.
+- **Alarm Creator with Horizontal Slide Wheels**: Custom `HorizontalWheelView` slide pickers (`00–23` hours, `00–59` minutes) for left/right time selection without blocking vertical scrolling, live current-time clock (`Now: HH:mm`) on Home and New Alarm, optional repeat days, preset/custom labels (auto-tagged with unique `#ID`), and vibration toggle.
 - **Quick Nap Presets**: 1-tap configurable nap buttons (e.g. `+20m`, `+30m`, `+45m`, `+60m`, `+90m`) with live wake-up time preview.
 - **Sleep Tracking & Alarm Controls**: Start Tracking, Start with Ideal Alarm, Stop Tracking, Snooze, Skip Next Alarm, and Dismiss Alarm.
 - **Native Wear OS Tile**: Quick-access Tile for 1-tap naps, tracking toggle, skip next alarm, and launching the app.
@@ -57,3 +57,8 @@ node test-ui-audit.js
 # Unit tests & debug APKs
 ./gradlew testDebugUnitTest assembleDebug
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
